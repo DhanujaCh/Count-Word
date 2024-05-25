@@ -9,10 +9,10 @@ import java.util.stream.Collectors;
 public class FindWordCountWithStreamsImpl implements FindWordCount {
 
     @Override
-    public void wordCount() {
+    public void wordCount(String fileName) {
         try {
 
-            System.out.println(Files.lines(Path.of("gpl-3.0.txt"))
+            System.out.println(Files.lines(Path.of(fileName)).parallel()
                     .flatMap(l -> Arrays.stream(l.trim().split(" ")).parallel())
                     .map(word -> word.replaceAll(Constants.SPECIALREGEX, "").trim().toLowerCase())
                     .filter(word -> !word.isEmpty())

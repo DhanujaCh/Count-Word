@@ -10,9 +10,9 @@ import static java.lang.Math.ceil;
 public class FindWordCountWithThreadsimpl implements FindWordCount {
 
     @Override
-    public void wordCount() {
+    public void wordCount(String fileName) {
 
-        List<String> wordsArray = Helper.readFile();
+        List<String> wordsArray = Helper.readFile(fileName);
         ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
         ConcurrentHashMap<String, Integer> outputMap = threadCreation(Constants.THREADSCOUNT, wordsArray, map);
         System.out.println(outputMap.entrySet().stream().map(e -> "'" + e.getKey() + "'" + ":" + e.getValue()).

@@ -7,11 +7,11 @@ public class FindWordCountWithExecutorServiceImpl implements FindWordCount {
     Helper helper = new Helper();
 
     @Override
-    public void wordCount() {
+    public void wordCount(String fileName) {
         ConcurrentHashMap<String, Integer> valueMap = new ConcurrentHashMap<>();
         final Queue<String> dataQueue = new ConcurrentLinkedQueue<>();
         new Thread(() -> {
-            try (CustomFileIterator customerFileIterator = new CustomFileIterator("gpl-3.0.txt")) {
+            try (CustomFileIterator customerFileIterator = new CustomFileIterator(fileName)) {
                 while (customerFileIterator.hasNext()) {
                     dataQueue.add(customerFileIterator.next());
                 }

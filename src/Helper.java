@@ -32,17 +32,21 @@ public class Helper {
         }
     }
 
-    public static long printExecutionTime(FindWordCount cw) {
+    public static long printExecutionTime(FindWordCount cw, String fileName) {
         long startTime = System.currentTimeMillis();
-        cw.wordCount();
+        cw.wordCount(fileName);
         long endTime = System.currentTimeMillis();
         return endTime - startTime;
     }
 
-    public static List<String> readFile() {
+    public static String getInputFile(String[] args){
+        return args.length!=1 ? "gpl-3.0.txt" : args[0];
+    }
+
+    public static List<String> readFile(String fileName) {
         List<String> wordsArray = null;
         try {
-            CustomFileIterator customerFileIterator = new CustomFileIterator("gpl-3.0.txt");
+            CustomFileIterator customerFileIterator = new CustomFileIterator(fileName);
             StringBuilder content = new StringBuilder();
             while (customerFileIterator.hasNext()) {
                 content.append(customerFileIterator.next()).append(" ").append("\n");

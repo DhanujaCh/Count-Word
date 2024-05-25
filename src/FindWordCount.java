@@ -2,5 +2,5 @@ import java.io.File;
 
 public interface FindWordCount {
 
-    void wordCount();
+    void wordCount(String fileName);
 }
