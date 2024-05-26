@@ -3,7 +3,7 @@
 
 Comments about this program:
 
-•	Program accepts input text file. Suppose if you missed to pass input file by default it will take ‘gpl-3.0.txt’.
+•	Main Program '**WordCountMain**' accepts input text file. Suppose if you missed to pass input file by default it will take ‘gpl-3.0.txt’.
 
 
 •	Created Interface ‘FindWordCount‎’ to implement method to reads text file and counts often occurred words.
