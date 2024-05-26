@@ -1,5 +1,8 @@
-/************************************** Reads a text file and counts how often words occur*****************************************************/
+/***** Reads a text file and counts how often words occur *****/
+
+
 Comments about this program:
+
 •	Program accepts input text file. Suppose if you missed to pass input file by default it will take ‘gpl-3.0.txt’.
 
 
