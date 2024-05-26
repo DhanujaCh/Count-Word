@@ -39,8 +39,12 @@ public class Helper {
         return endTime - startTime;
     }
 
-    public static String getInputFile(String[] args){
-        return args.length!=1 ? "gpl-3.0.txt" : args[0];
+    public static String getInputFile(String[] args) throws Exception {
+        File fileName = new File(args.length != 1 ? "gpl-3.0.txt" : args[0]);
+        if (!fileName.getName().endsWith(".txt")) {
+            throw new Exception("Please try again with file extension as .txt");
+        }
+        return fileName.getName();
     }
 
     public static List<String> readFile(String fileName) {
