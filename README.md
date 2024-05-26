@@ -22,5 +22,5 @@ Comments about this program:
           
           o	'all': 21
           
-•	And also output should be inside flower braces(‘{}’) and each word should be inside single quote(‘all’).
+•	And also output should be inside flower braces(‘{}’) and each word should be inside single quotation(‘all’).
 
